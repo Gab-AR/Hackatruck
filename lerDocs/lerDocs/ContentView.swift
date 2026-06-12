@@ -105,7 +105,6 @@ struct ContentView: View {
             Task { await loadPickedImage(newValue) }
         }
         .onAppear {
-            // Cria e mantém referência forte ao delegate
             let delegate = SpeechDelegate(isSpeaking: $isSpeaking)
             self.speechDelegate = delegate
             self.speechSynth.delegate = delegate
