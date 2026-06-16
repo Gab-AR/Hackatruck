@@ -41,7 +41,6 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            // Fundo vermelho
             Color.red
                 .ignoresSafeArea()
 
@@ -105,10 +104,10 @@ struct ContentView: View {
                                 }
                                 .padding(.vertical, 4)
                             }
-                            .listRowBackground(Color.clear) // linha transparente
+                            .listRowBackground(Color.clear)
                         }
                         .listStyle(.plain)
-                        .scrollContentBackground(.hidden) // oculta o fundo padrão da List
+                        .scrollContentBackground(.hidden)
                         .background(Color.clear)
                         .navigationDestination(for: HaPo.self) { person in
                             CharacterDetailView(person: person)
@@ -129,13 +128,11 @@ struct CharacterDetailView: View {
 
     var body: some View {
         ZStack {
-            // Fundo vermelho no detalhe
             Color.red
                 .ignoresSafeArea()
 
             ScrollView {
                 VStack(spacing: 16) {
-                    // Imagem grande do personagem
                     if let urlString = person.image,
                        let url = URL(string: urlString),
                        !urlString.isEmpty {

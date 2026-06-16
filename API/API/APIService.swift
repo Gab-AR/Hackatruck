@@ -22,7 +22,6 @@ struct APIService {
         }
 
         do {
-            // As suas propriedades já estão em snake_case como no JSON, então não precisamos de keyDecodingStrategy
             return try JSONDecoder().decode([HaPo].self, from: data)
         } catch {
             throw APIError.decodingFailed(error)
